@@ -53,6 +53,7 @@
 							<th scope="col">Monto (S/.)</th>
 							<th scope="col">Fecha</th>
 							<th scope="col">ID Empleado</th>
+							<th scope="col">Acciones</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -63,6 +64,7 @@
 								<td><c:out value="${ bon.monto }" /></td>
 								<td><c:out value="${ bon.fecha }" /></td>
 								<td><c:out value="${ bon.empleado.id }" /></td>
+								<td><a href="bonedit/${ bon.id }" ><i class="bi bi-pencil-square"></i></a></td>
 							</tr>
 						</c:forEach>
 					</tbody>

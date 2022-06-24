@@ -92,9 +92,5 @@
 
 	<!-- JS -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-	<script>
-		console.log(b)
-	</script>
-<!-- 	<script src="https://christopher-carrasco.ga/donlucho/nomina.js"></script> -->
 </body>
 </html>

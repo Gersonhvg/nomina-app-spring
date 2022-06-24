@@ -54,6 +54,7 @@
 							<th scope="col">Apellido</th>
 							<th scope="col">Ocupación</th>
 							<th scope="col">Sueldo (S/.)</th>
+							<th scope="col">Acciones</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -65,6 +66,7 @@
 								<td><c:out value="${ emp.apellido }" /></td>
 								<td><c:out value="${ emp.ocupacion.ocupacion }" /></td>
 								<td><c:out value="${ emp.ocupacion.sueldo }" /></td>
+								<td><a href="empedit/${ emp.id }" ><i class="bi bi-pencil-square"></i></a></td>
 							</tr>
 						</c:forEach>
 					</tbody>
