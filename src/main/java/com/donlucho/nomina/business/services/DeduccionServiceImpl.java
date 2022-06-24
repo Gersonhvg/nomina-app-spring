@@ -1,6 +1,7 @@
-package com.donlucho.nomina.services;
+package com.donlucho.nomina.business.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -17,13 +18,28 @@ public class DeduccionServiceImpl implements DeduccionService {
 
 	@Override
 	public List<Deduccion> ListarDeduccion() {
-		// TODO Auto-generated method stub
 		return deduccionRepository.findAll();
 	}
 
 	@Override
 	public Deduccion addDeduccion(Deduccion deduccion) {
-		// TODO Auto-generated method stub
 		return deduccionRepository.save(deduccion);
+	}
+
+	@Override
+	public Optional<Deduccion> getDeduccionId(Integer id) {
+		return deduccionRepository.findById(id);
+	}
+
+	@Override
+	public Deduccion updateDeduccion(int id, Deduccion deduccion) {
+		Deduccion updateDeduccion = deduccionRepository.findById(id).orElse(null);
+		updateDeduccion.setMotivo(deduccion.getMotivo());
+		updateDeduccion.setMonto(deduccion.getMonto());
+		updateDeduccion.setFecha(deduccion.getFecha());
+		updateDeduccion.setEmpleado(deduccion.getEmpleado());
+		updateDeduccion.setPlanilla(deduccion.getPlanilla());
+		
+		return deduccionRepository.save(updateDeduccion);
 	}
 }

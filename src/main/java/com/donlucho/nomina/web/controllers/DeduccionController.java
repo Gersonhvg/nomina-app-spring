@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.donlucho.nomina.business.entities.Deduccion;
-import com.donlucho.nomina.services.DeduccionService;
+import com.donlucho.nomina.business.services.DeduccionService;
 
 @Controller
 @RequestMapping("/deduccion")

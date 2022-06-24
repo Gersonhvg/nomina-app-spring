@@ -28,7 +28,7 @@ import com.donlucho.nomina.business.entities.Usuario;
 @EnableTransactionManagement
 @PropertySource("classpath:application.properties")
 @EnableJpaRepositories(basePackages = "com.donlucho.nomina.business.repositories")
-@ComponentScan(basePackages = "com.donlucho.nomina.services")
+@ComponentScan(basePackages = "com.donlucho.nomina.business.services")
 
 public class NominaBusinessConfig {
 	@Autowired

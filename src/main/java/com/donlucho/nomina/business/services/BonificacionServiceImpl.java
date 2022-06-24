@@ -1,6 +1,7 @@
-package com.donlucho.nomina.services;
+package com.donlucho.nomina.business.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -17,13 +18,28 @@ public class BonificacionServiceImpl implements BonificacionService {
 
 	@Override
 	public List<Bonificacion> ListarBonificacion() {
-		// TODO Auto-generated method stub
 		return bonificacionRepository.findAll();
 	}
 
 	@Override
 	public Bonificacion addBonificacion(Bonificacion bonificacion) {
-		// TODO Auto-generated method stub
 		return bonificacionRepository.save(bonificacion);
+	}
+
+	@Override
+	public Optional<Bonificacion> getBonificacionId(Integer id) {
+		return bonificacionRepository.findById(id);
+	}
+
+	@Override
+	public Bonificacion updateBonificacion(int id, Bonificacion bonificacion) {
+		Bonificacion updateBonificacion = bonificacionRepository.findById(id).orElse(null);
+		updateBonificacion.setMotivo(bonificacion.getMotivo());
+		updateBonificacion.setMonto(bonificacion.getMonto());
+		updateBonificacion.setFecha(bonificacion.getFecha());
+		updateBonificacion.setEmpleado(bonificacion.getEmpleado());
+		updateBonificacion.setPlanilla(bonificacion.getPlanilla());
+		
+		return bonificacionRepository.save(updateBonificacion);
 	}
 }

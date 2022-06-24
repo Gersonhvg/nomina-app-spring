@@ -10,7 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.donlucho.nomina.services.BonificacionService;
+import com.donlucho.nomina.business.services.BonificacionService;
 
 @Controller
 public class BonificacionesController {
