@@ -48,6 +48,7 @@
 						<div class="row justify-content-center register">
 							<div class="col-md-10">
 								<h2 class="text-center">ACTUALIZAR DEDUCCIÓN</h2>
+								<h5 class="text-center text-danger">${ ded.empleado.nombre } ${ ded.empleado.apellido }</h5>
 							</div>
 						</div>
 						<form action="${ id }" class="form formu" object="${ deducciones }" method="post">

@@ -73,7 +73,7 @@
 							<th scope="col">Motivo</th>
 							<th scope="col">Monto (S/.)</th>
 							<th scope="col">Fecha</th>
-							<th scope="col">ID Empleado</th>
+							<th scope="col">Empleado</th>
 							<th scope="col">Acciones</th>
 						</tr>
 					</thead>
@@ -84,9 +84,9 @@
 								<td><c:out value="${ ded.motivo }" /></td>
 								<td><c:out value="${ ded.monto }" /></td>
 								<td><c:out value="${ ded.fecha }" /></td>
-								<td><c:out value="${ ded.empleado.id }" /></td>
+								<td><c:out value="${ ded.empleado.nombre } ${ ded.empleado.apellido }" /></td>
 								<td>
-									<a href="dededit/${ ded.id }" ><span class="bi bi-pencil-square"></span></a> &nbsp;
+									<a href="dededit/${ ded.id }"><span class="bi bi-pencil-square"></span></a> &nbsp;
 									<a href="del-ded/${ ded.id }"><span class="bi bi-trash3"></span></a>
 								</td>
 							</tr>

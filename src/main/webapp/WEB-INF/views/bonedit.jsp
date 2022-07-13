@@ -48,6 +48,7 @@
 						<div class="row justify-content-center register">
 							<div class="col-md-10">
 								<h2 class="text-center">ACTUALIZAR BONIFICACIÓN</h2>
+								<h5 class="text-center text-danger">${ command.empleado.nombre } ${ command.empleado.apellido }</h5>
 							</div>
 						</div>
 						<form action="${ id }" class="form formu" object="${ bonificacion }" method="post">

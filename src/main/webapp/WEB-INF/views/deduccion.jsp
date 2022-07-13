@@ -74,9 +74,14 @@
 							</div>
 							<!--ID empleado-->
 							<div class="row form-group">
-								<label for="empleado.id" class="col-form-label col-md-4">ID empleado</label>
+								<label for="empleado.id" class="col-form-label col-md-4">Empleado</label>
 								<div class="col-md-8">
-									<input type="number" class="form-control" id="empleado.id" name="empleado.id"  min="1" max="999999" required />
+									<select class="form-select" id="empleado.id" name="empleado.id" required>
+										<option disabled selected>Seleccione...</option>
+										<c:forEach items="${ empleados }" var="emp">
+											<option value="${ emp.id }">${ emp.nombre } ${ emp.apellido }</option>
+										</c:forEach>
+									</select>
 								</div>
 							</div>
 							<!--ID planilla-->

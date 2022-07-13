@@ -73,7 +73,7 @@
 							<th scope="col">Motivo</th>
 							<th scope="col">Monto (S/.)</th>
 							<th scope="col">Fecha</th>
-							<th scope="col">ID Empleado</th>
+							<th scope="col">Empleado</th>
 							<th scope="col">Acciones</th>
 						</tr>
 					</thead>
@@ -84,9 +84,9 @@
 								<td><c:out value="${ bon.motivo }" /></td>
 								<td><c:out value="${ bon.monto }" /></td>
 								<td><c:out value="${ bon.fecha }" /></td>
-								<td><c:out value="${ bon.empleado.id }" /></td>
+								<td><c:out value="${ bon.empleado.nombre } ${ bon.empleado.apellido }" /></td>
 								<td>
-									<a href="bonedit/${ bon.id }" ><span class="bi bi-pencil-square"></span></a> &nbsp;
+									<a href="bonedit/${ bon.id }"><span class="bi bi-pencil-square"></span></a> &nbsp;
 									<a href="del-bon/${ bon.id }"><span class="bi bi-trash3"></span></a>
 								</td>
 							</tr>
