@@ -87,7 +87,7 @@
 								<td><c:out value="${ bon.empleado.id }" /></td>
 								<td>
 									<a href="bonedit/${ bon.id }" ><span class="bi bi-pencil-square"></span></a> &nbsp;
-									<a href="#"><span class="bi bi-trash3"></span></a>
+									<a href="del-bon/${ bon.id }"><span class="bi bi-trash3"></span></a>
 								</td>
 							</tr>
 						</c:forEach>
