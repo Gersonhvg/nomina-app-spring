@@ -29,4 +29,18 @@ public class EmpleadosController {
 		
 		return new ModelAndView("empleados", "model", empleadoModel);
 	}
+	
+	@RequestMapping(value = "/bonificacion.htm")
+	public ModelAndView manejadorVistaBonificacion() {
+		Map<String, Object> empleadoModel = new HashMap<>();
+		empleadoModel.put("empleados", this.empleadoService.listarEmpleados());
+		return new ModelAndView("bonificacion",empleadoModel);
+	}
+	
+	@RequestMapping(value = "/deduccion.htm")
+	public ModelAndView manejadorVistaDeduccion() {
+		Map<String, Object> empleadoModel = new HashMap<>();
+		empleadoModel.put("empleados", this.empleadoService.listarEmpleados());
+		return new ModelAndView("deduccion",empleadoModel);
+	}
 }
