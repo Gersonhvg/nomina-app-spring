@@ -7,8 +7,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.donlucho.nomina.business.entities.Bonificacion;
@@ -20,7 +20,7 @@ public class BonificacionCtr {
 	@Qualifier("bonificacionservice")
 	private BonificacionService bonificacionService;
 
-	@RequestMapping(method = RequestMethod.GET, value = "/bonificacion.htm")
+	@GetMapping("/bonificacion.htm")
 	public ModelAndView manejadorVistaBonificacion() {
 		return new ModelAndView("bonificacion");
 	}
@@ -32,7 +32,7 @@ public class BonificacionCtr {
 		return "bonedit";
 	}
 	
-	@RequestMapping(method = RequestMethod.POST, value = "/bonedit/{id}")
+	@PostMapping("/bonedit/{id}")
 	public String updateBonificacion(@PathVariable int id, @ModelAttribute("bonificacion") Bonificacion bonificacion) {
 		bonificacionService.updateBonificacion(id, bonificacion);
 		return "redirect:/bonificaciones.htm";
