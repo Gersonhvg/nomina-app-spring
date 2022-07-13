@@ -21,7 +21,7 @@ public class EmpleadosController {
 
 	@RequestMapping(value = "/empleados.htm")
 	public ModelAndView manejadorVistaEmpleados() {
-		Map<String, Object> empleadoModel = new HashMap<String, Object>();
+		Map<String, Object> empleadoModel = new HashMap<>();
 		empleadoModel.put("empleados", this.empleadoService.listarEmpleados());
 		
 		logger.info("Resolviendo la lista de empleados.");

@@ -21,7 +21,7 @@ public class DeduccionesController {
 
 	@RequestMapping(value = "/deducciones.htm")
 	public ModelAndView manejadorVistaDeducciones() {
-		Map<String, Object> deduccionModel = new HashMap<String, Object>();
+		Map<String, Object> deduccionModel = new HashMap<>();
 		deduccionModel.put("deducciones", this.deduccionService.listarDeduccion());
 		
 		logger.info("Resolviendo la lista de deducciones.");

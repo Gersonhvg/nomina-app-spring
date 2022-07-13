@@ -21,7 +21,7 @@ public class NominaController {
 	
 	@RequestMapping(value = "/nomina.htm")
 	public ModelAndView manejadorVistaNomina() {
-		Map<String, Object> empleadoModel = new HashMap<String, Object>();
+		Map<String, Object> empleadoModel = new HashMap<>();
 		empleadoModel.put("empleados", this.empleadoService.listarEmpleados());
 		
 		logger.info("Resolviendo la lista de empleados.");

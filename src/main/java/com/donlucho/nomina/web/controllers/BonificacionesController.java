@@ -21,7 +21,7 @@ public class BonificacionesController {
 
 	@RequestMapping(value = "/bonificaciones.htm")
 	public ModelAndView manejadorVistaBonificaciones() {
-		Map<String, Object> bonificacionModel = new HashMap<String, Object>();
+		Map<String, Object> bonificacionModel = new HashMap<>();
 		bonificacionModel.put("bonificaciones", this.bonificacionService.listarBonificacion());
 		
 		logger.info("Resolviendo la lista de bonificaciones.");
