@@ -2,7 +2,7 @@
 <%@ include file="/WEB-INF/views/incluido.jsp" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <!-- HEAD -->
 <head>
 	<meta charset="UTF-8">
@@ -11,7 +11,7 @@
 	<link rel="icon" href="https://christopher-carrasco.ga/donlucho/don-lucho-logo.png" />
 	<link rel="stylesheet" href="https://christopher-carrasco.ga/donlucho/styles.css" />
 	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@100&family=Rambla&display=swap" rel="stylesheet">
 </head>
 
@@ -54,14 +54,15 @@
 					<form action="inicio.htm">
 						<h2 class="frame1 fw-normal color ">Bienvenido a Don Lucho</h2>
 						<fieldset class="field_cont">
+							<legend class="text-white">Iniciar sesión</legend>
 							<div>
-								<label class="text" for="email"><b>Email</b></label><br>
+								<label class="text" for="email"><strong>Email</strong></label><br>
 								<input class="text1 fw-bolder form-control" type="email" id="email" name="email" title="Es obligatorio que ingreses tu email" placeholder="Ingresa tu email" required>
 								<br><br>
 							</div>
 							<div>
-								<label class="text" for="contrasenia"><b>Contraseña</b></label><br>
-								<input class="text1 fw-bolder form-control" type="password" id="contrasenia" name="contrasenia" maxlength="50" title="Es ogligatorio que ingreses tu contraseña" placeholder="Ingresa tu contraseña" required>
+								<label class="text" for="contrasenia"><strong>Contraseña</strong></label><br>
+								<input class="text1 fw-bolder form-control" type="password" id="contrasenia" name="contrasenia" minlength="6" title="Es ogligatorio que ingreses tu contraseña" placeholder="Ingresa tu contraseña" required>
 								<br><br>
 							</div>
 							<input type="submit" class="btn btn-danger" value="Login">

@@ -2,7 +2,7 @@
 <%@ include file="/WEB-INF/views/incluido.jsp" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <!-- HEAD -->
 <head>
 	<meta charset="UTF-8">
@@ -44,15 +44,36 @@
 		<div class="row justify-content-center">
 			<div class="col-md-12">
 				<h1 class="text-center">DEDUCCIONES</h1>
-				<a class="btn btn-danger" href="deduccion.htm" role="button">Nuevo</a><br /><br />
+				<div class="row my-3">
+					<div class="col-md-6">
+						<a class="btn btn-danger" href="deduccion.htm" role="button">Nuevo</a>
+					</div>
+					<div class="col-md-6">
+						<form class="row g-3 align-items-center" action="deducciones.htm">
+							<div class="col-md-auto">
+								<label for="palabraClave" class="col-form-label">Filtrar:</label>
+							</div>
+							<div class="col-md-auto">
+								<input type="text" class="form-control" id="palabraClave" name="palabraClave" placeholder="Digite el valor a buscar">
+							</div>
+							<div class="col-md-auto">
+								<div class="btn-group" role="group">
+									<input type="submit" class="btn btn-info" value="Buscar"/>
+            						<input type="submit" class="btn btn-warning" value="Limpiar"/>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
 				<table class="table table-striped table-hover table-bordered text-center">
+					<caption class="text-white">Deducciones</caption>
 					<thead>
 						<tr>
 							<th scope="col">ID</th>
 							<th scope="col">Motivo</th>
 							<th scope="col">Monto (S/.)</th>
 							<th scope="col">Fecha</th>
-							<th scope="col">ID Empleado</th>
+							<th scope="col">Empleado</th>
 							<th scope="col">Acciones</th>
 						</tr>
 					</thead>
@@ -63,8 +84,11 @@
 								<td><c:out value="${ ded.motivo }" /></td>
 								<td><c:out value="${ ded.monto }" /></td>
 								<td><c:out value="${ ded.fecha }" /></td>
-								<td><c:out value="${ ded.empleado.id }" /></td>
-								<td><a href="dededit/${ ded.id }" ><i class="bi bi-pencil-square"></i></a></td>
+								<td><c:out value="${ ded.empleado.nombre } ${ ded.empleado.apellido }" /></td>
+								<td>
+									<a href="dededit/${ ded.id }"><span class="bi bi-pencil-square"></span></a> &nbsp;
+									<a href="del-ded/${ ded.id }"><span class="bi bi-trash3"></span></a>
+								</td>
 							</tr>
 						</c:forEach>
 					</tbody>

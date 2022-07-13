@@ -2,7 +2,7 @@
 <%@ include file="/WEB-INF/views/incluido.jsp" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <!-- HEAD -->
 <head>
 	<meta charset="UTF-8">
@@ -105,7 +105,7 @@
 								<label for="ocupacion.id" class="col-form-label col-md-4">Ocupación</label>
 								<div class="col-md-8">
 									<select class="form-select" id="ocupacion.id" name="ocupacion.id" required>
-										<option value="${ emp.ocupacion.id }" selected>${ emp.ocupacion.ocupacion }</option>
+										<option value="${ emp.ocupacion.id }" selected>${ emp.ocupacion.ocupacions }</option>
 										<option value="4">Transportista</option>
 										<option value="5">Soldador</option>
 										<option value="6">Almacenero</option>

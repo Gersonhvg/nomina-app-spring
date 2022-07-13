@@ -2,7 +2,7 @@
 <%@ include file="/WEB-INF/views/incluido.jsp" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <!-- HEAD -->
 <head>
 	<meta charset="UTF-8" />
@@ -50,7 +50,7 @@
 								<h2 class="text-center">REGISTRAR BONIFICACIÓN</h2>
 							</div>
 						</div>
-						<form action="bonificacion/addBonificacion" class="form formu" object="${ bonificacion }" method="post">
+						<form action="bonificacion/add" class="form formu" object="${ bonificaciones }" method="post">
 							<!--Motivo-->
 							<div class="row form-group">
 								<label for="motivo" class="col-form-label col-md-4">Motivo</label>
@@ -74,9 +74,14 @@
 							</div>
 							<!--ID empleado-->
 							<div class="row form-group">
-								<label for="empleado.id" class="col-form-label col-md-4">ID empleado</label>
+								<label for="empleado.id" class="col-form-label col-md-4">Empleado</label>
 								<div class="col-md-8">
-									<input type="number" class="form-control" id="empleado.id" name="empleado.id"  min="1" max="999999" required />
+									<select class="form-select" id="empleado.id" name="empleado.id" required>
+										<option disabled selected>Seleccione...</option>
+										<c:forEach items="${ empleados }" var="emp">
+											<option value="${ emp.id }">${ emp.nombre } ${ emp.apellido }</option>
+										</c:forEach>
+									</select>
 								</div>
 							</div>
 							<!--ID planilla-->
@@ -84,8 +89,7 @@
 								<label for="planilla.id" class="col-form-label col-md-4">Planilla</label>
 								<div class="col-md-8">
 									<select class="form-select" id="planilla.id" name="planilla.id" required>
-										<option value="1" selected>JUNIO - 2022</option>
-<!-- 										<option value="2">JULIO - 2022</option> -->
+										<option value="1" selected>JULIO - 2022</option>
 									</select>
 								</div>
 							</div>

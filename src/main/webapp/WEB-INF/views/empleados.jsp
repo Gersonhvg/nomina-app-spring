@@ -2,7 +2,7 @@
 <%@ include file="/WEB-INF/views/incluido.jsp" %>
 <%@ taglib prefix="fomr" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <!-- HEAD -->
 <head>
 	<meta charset="UTF-8">
@@ -44,8 +44,29 @@
 		<div class="row justify-content-center">
 			<div class="col-md-12">
 				<h1 class="text-center">EMPLEADOS</h1>
-				<a class="btn btn-danger" href="empleado.htm" role="button">Nuevo</a><br /><br />
+				<div class="row my-3">
+					<div class="col-md-6">
+						<a class="btn btn-danger" href="empleado.htm" role="button">Nuevo</a>
+					</div>
+					<div class="col-md-6">
+						<form class="row g-3 align-items-center" action="empleados.htm">
+							<div class="col-md-auto">
+								<label for="palabraClave" class="col-form-label">Filtrar:</label>
+							</div>
+							<div class="col-md-auto">
+								<input type="text" class="form-control" id="palabraClave" name="palabraClave" placeholder="Digite el valor a buscar">
+							</div>
+							<div class="col-md-auto">
+								<div class="btn-group" role="group">
+									<input type="submit" class="btn btn-info" value="Buscar"/>
+            						<input type="submit" class="btn btn-warning" value="Limpiar"/>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
 				<table class="table table-striped table-hover table-bordered text-center">
+					<caption class="text-white">Empleados</caption>
 					<thead>
 						<tr>
 							<th scope="col">ID</th>
@@ -64,9 +85,9 @@
 								<td><c:out value="${ emp.dni }" /></td>
 								<td><c:out value="${ emp.nombre }" /></td>
 								<td><c:out value="${ emp.apellido }" /></td>
-								<td><c:out value="${ emp.ocupacion.ocupacion }" /></td>
+								<td><c:out value="${ emp.ocupacion.ocupacions }" /></td>
 								<td><c:out value="${ emp.ocupacion.sueldo }" /></td>
-								<td><a href="empedit/${ emp.id }" ><i class="bi bi-pencil-square"></i></a></td>
+								<td><a href="empedit/${ emp.id }" ><span class="bi bi-pencil-square"></span></a></td>
 							</tr>
 						</c:forEach>
 					</tbody>

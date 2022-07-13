@@ -2,7 +2,7 @@
 <%@ include file="/WEB-INF/views/incluido.jsp" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <!-- HEAD -->
 <head>
 	<meta charset="UTF-8" />
@@ -48,6 +48,7 @@
 						<div class="row justify-content-center register">
 							<div class="col-md-10">
 								<h2 class="text-center">ACTUALIZAR DEDUCCIÓN</h2>
+								<h5 class="text-center text-danger">${ ded.empleado.nombre } ${ ded.empleado.apellido }</h5>
 							</div>
 						</div>
 						<form action="${ id }" class="form formu" object="${ deducciones }" method="post">
@@ -84,8 +85,7 @@
 								<label for="planilla.id" class="col-form-label col-md-4">Planilla</label>
 								<div class="col-md-8">
 									<select class="form-select" id="planilla.id" name="planilla.id" value="${ ded.planilla.id }" required>
-										<option value="1" selected>JUNIO - 2022</option>
-<!-- 										<option value="2">JULIO - 2022</option> -->
+										<option value="1" selected>JULIO - 2022</option>
 									</select>
 								</div>
 							</div>

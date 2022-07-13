@@ -2,7 +2,7 @@
 <%@ include file="/WEB-INF/views/incluido.jsp" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <!-- HEAD -->
 <head>
 	<meta charset="UTF-8">
@@ -43,7 +43,28 @@
 		<div class="row justify-content-center">
 			<div class="col-md-12">
 				<h1 class="text-center">NÓMINA</h1>
+				
+				<div class="row my-3">
+					<div class="col-md-12">
+						<form class="row g-3 align-items-center" action="nomina.htm">
+							<div class="col-md-auto">
+								<label for="palabraClave" class="col-form-label">Filtrar:</label>
+							</div>
+							<div class="col-md-auto">
+								<input type="text" class="form-control" id="palabraClave" name="palabraClave" placeholder="Digite el valor a buscar">
+							</div>
+							<div class="col-md-auto">
+								<div class="btn-group" role="group">
+									<input type="submit" class="btn btn-info" value="Buscar"/>
+            						<input type="submit" class="btn btn-warning" value="Limpiar"/>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				
 				<table class="table table-striped table-hover table-bordered text-center">
+					<caption class="text-white">Nómina</caption>
 					<thead>
 						<tr>
 							<th scope="col">ID</th>
