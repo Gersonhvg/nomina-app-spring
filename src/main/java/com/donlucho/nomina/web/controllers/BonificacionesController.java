@@ -7,10 +7,11 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.donlucho.nomina.services.BonificacionService;
+import com.donlucho.nomina.business.services.BonificacionService;
 
 @Controller
 public class BonificacionesController {
@@ -18,16 +19,21 @@ public class BonificacionesController {
 	
 	@Autowired
 	private BonificacionService bonificacionService;
-	
-	//Bonificaciones
+
 	@RequestMapping(value = "/bonificaciones.htm")
 	public ModelAndView manejadorVistaBonificaciones() {
-		Map<String, Object> bonificacionModel = new HashMap<String, Object>();
-		bonificacionModel.put("bonificaciones", this.bonificacionService.ListarBonificacion());
+		Map<String, Object> bonificacionModel = new HashMap<>();
+		bonificacionModel.put("bonificaciones", this.bonificacionService.listarBonificacion());
 		
 		logger.info("Resolviendo la lista de bonificaciones.");
 		logger.info(bonificacionModel);
 		
 		return new ModelAndView("bonificaciones", "model", bonificacionModel);
+	}
+	
+	@RequestMapping(value = "/del-bon/{id}")
+	public String deleteBonificacion(@PathVariable int id) {
+		bonificacionService.deleteById(id);
+		return "redirect:/bonificaciones.htm";
 	}
 }

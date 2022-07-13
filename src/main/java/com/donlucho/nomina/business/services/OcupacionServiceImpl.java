@@ -1,4 +1,4 @@
-package com.donlucho.nomina.services;
+package com.donlucho.nomina.business.services;
 
 import java.util.List;
 
@@ -17,13 +17,11 @@ public class OcupacionServiceImpl implements OcupacionService {
 	
 	@Override
 	public List<Ocupacion> listarOcupacion() {
-		// TODO Auto-generated method stub
 		return ocupacionRepository.findAll();
 	}
 
 	@Override
 	public Ocupacion addOcupacion(Ocupacion ocupacion) {
-		// TODO Auto-generated method stub
 		return ocupacionRepository.save(ocupacion);
 	}
 }

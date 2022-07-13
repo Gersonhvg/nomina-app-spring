@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.donlucho.nomina.business.entities.Bonificacion;
-import com.donlucho.nomina.services.BonificacionService;
+import com.donlucho.nomina.business.services.BonificacionService;
 
 @Controller
 @RequestMapping("/bonificacion")

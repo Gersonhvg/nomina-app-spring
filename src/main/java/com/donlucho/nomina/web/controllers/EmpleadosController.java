@@ -10,7 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.donlucho.nomina.services.EmpleadoService;
+import com.donlucho.nomina.business.services.EmpleadoService;
 
 @Controller
 public class EmpleadosController {
@@ -18,16 +18,29 @@ public class EmpleadosController {
 	
 	@Autowired
 	private EmpleadoService empleadoService;
-	
-	//Empleados
+
 	@RequestMapping(value = "/empleados.htm")
 	public ModelAndView manejadorVistaEmpleados() {
-		Map<String, Object> empleadoModel = new HashMap<String, Object>();
-		empleadoModel.put("empleados", this.empleadoService.ListarEmpleados());
+		Map<String, Object> empleadoModel = new HashMap<>();
+		empleadoModel.put("empleados", this.empleadoService.listarEmpleados());
 		
 		logger.info("Resolviendo la lista de empleados.");
 		logger.info(empleadoModel);
 		
 		return new ModelAndView("empleados", "model", empleadoModel);
+	}
+	
+	@RequestMapping(value = "/bonificacion.htm")
+	public ModelAndView manejadorVistaBonificacion() {
+		Map<String, Object> empleadoModel = new HashMap<>();
+		empleadoModel.put("empleados", this.empleadoService.listarEmpleados());
+		return new ModelAndView("bonificacion",empleadoModel);
+	}
+	
+	@RequestMapping(value = "/deduccion.htm")
+	public ModelAndView manejadorVistaDeduccion() {
+		Map<String, Object> empleadoModel = new HashMap<>();
+		empleadoModel.put("empleados", this.empleadoService.listarEmpleados());
+		return new ModelAndView("deduccion",empleadoModel);
 	}
 }
