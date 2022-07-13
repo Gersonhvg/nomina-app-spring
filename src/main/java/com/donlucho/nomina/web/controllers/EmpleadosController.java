@@ -3,6 +3,9 @@ package com.donlucho.nomina.web.controllers;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,9 +23,11 @@ public class EmpleadosController {
 	private EmpleadoService empleadoService;
 
 	@RequestMapping(value = "/empleados.htm")
-	public ModelAndView manejadorVistaEmpleados() {
+	public ModelAndView manejadorVistaEmpleados(HttpServletRequest request, HttpServletResponse res) {
+		String palabraClave = request.getParameter("palabraClave");
+		
 		Map<String, Object> empleadoModel = new HashMap<>();
-		empleadoModel.put("empleados", this.empleadoService.listarEmpleados());
+		empleadoModel.put("empleados", this.empleadoService.listarEmpleados(palabraClave));
 		
 		logger.info("Resolviendo la lista de empleados.");
 		logger.info(empleadoModel);
@@ -32,15 +37,17 @@ public class EmpleadosController {
 	
 	@RequestMapping(value = "/bonificacion.htm")
 	public ModelAndView manejadorVistaBonificacion() {
+		String palabraClave = "";
 		Map<String, Object> empleadoModel = new HashMap<>();
-		empleadoModel.put("empleados", this.empleadoService.listarEmpleados());
-		return new ModelAndView("bonificacion",empleadoModel);
+		empleadoModel.put("empleados", this.empleadoService.listarEmpleados(palabraClave));
+		return new ModelAndView("bonificacion", empleadoModel);
 	}
 	
 	@RequestMapping(value = "/deduccion.htm")
 	public ModelAndView manejadorVistaDeduccion() {
+		String palabraClave = "";
 		Map<String, Object> empleadoModel = new HashMap<>();
-		empleadoModel.put("empleados", this.empleadoService.listarEmpleados());
-		return new ModelAndView("deduccion",empleadoModel);
+		empleadoModel.put("empleados", this.empleadoService.listarEmpleados(palabraClave));
+		return new ModelAndView("deduccion", empleadoModel);
 	}
 }

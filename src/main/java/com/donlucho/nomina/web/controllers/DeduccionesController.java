@@ -3,6 +3,9 @@ package com.donlucho.nomina.web.controllers;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,9 +24,11 @@ public class DeduccionesController {
 	private DeduccionService deduccionService;
 
 	@RequestMapping(value = "/deducciones.htm")
-	public ModelAndView manejadorVistaDeducciones() {
+	public ModelAndView manejadorVistaDeducciones(HttpServletRequest request, HttpServletResponse res) {
+		String palabraClave = request.getParameter("palabraClave");
+		
 		Map<String, Object> deduccionModel = new HashMap<>();
-		deduccionModel.put("deducciones", this.deduccionService.listarDeduccion());
+		deduccionModel.put("deducciones", this.deduccionService.listarDeduccion(palabraClave));
 		
 		logger.info("Resolviendo la lista de deducciones.");
 		logger.info(deduccionModel);

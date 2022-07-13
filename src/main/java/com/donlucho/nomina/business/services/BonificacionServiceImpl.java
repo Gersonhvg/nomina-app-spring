@@ -17,7 +17,10 @@ public class BonificacionServiceImpl implements BonificacionService {
 	private BonificacionJpaRepository bonificacionRepository;
 
 	@Override
-	public List<Bonificacion> listarBonificacion() {
+	public List<Bonificacion> listarBonificacion(String palabraClave) {
+		if(palabraClave != null) {
+			return bonificacionRepository.findAll(palabraClave);
+		}
 		return bonificacionRepository.findAll();
 	}
 
