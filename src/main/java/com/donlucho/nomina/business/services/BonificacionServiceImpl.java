@@ -39,7 +39,12 @@ public class BonificacionServiceImpl implements BonificacionService {
 		updateBonificacion.setFecha(bonificacion.getFecha());
 		updateBonificacion.setEmpleado(bonificacion.getEmpleado());
 		updateBonificacion.setPlanilla(bonificacion.getPlanilla());
-		
+
 		return bonificacionRepository.save(updateBonificacion);
+	}
+
+	@Override
+	public void deleteById(int id) {
+		bonificacionRepository.deleteById(id);
 	}
 }

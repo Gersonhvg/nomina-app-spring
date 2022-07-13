@@ -10,4 +10,5 @@ public interface BonificacionService {
 	public Bonificacion addBonificacion(Bonificacion bonificacion);
 	public Optional<Bonificacion> getBonificacionId(Integer id);
 	public Bonificacion updateBonificacion(int id, Bonificacion bonificacion);
+	public void deleteById(int id);
 }

@@ -10,4 +10,5 @@ public interface DeduccionService {
 	public Deduccion addDeduccion(Deduccion deduccion);
 	public Optional<Deduccion> getDeduccionId(Integer id);
 	public Deduccion updateDeduccion(int id, Deduccion deduccion);
+	public void deleteById(int id);
 }

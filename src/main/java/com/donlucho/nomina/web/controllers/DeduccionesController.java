@@ -7,6 +7,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -28,5 +29,11 @@ public class DeduccionesController {
 		logger.info(deduccionModel);
 		
 		return new ModelAndView("deducciones", "model", deduccionModel);
+	}
+	
+	@RequestMapping(value = "/del-ded/{id}")
+	public String deleteDeduccion(@PathVariable int id) {
+		deduccionService.deleteById(id);
+		return "redirect:/deducciones.htm";
 	}
 }

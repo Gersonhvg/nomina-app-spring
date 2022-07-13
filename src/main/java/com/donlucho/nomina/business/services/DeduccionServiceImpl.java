@@ -42,4 +42,9 @@ public class DeduccionServiceImpl implements DeduccionService {
 		
 		return deduccionRepository.save(updateDeduccion);
 	}
+	
+	@Override
+	public void deleteById(int id) {
+		deduccionRepository.deleteById(id);
+	}
 }

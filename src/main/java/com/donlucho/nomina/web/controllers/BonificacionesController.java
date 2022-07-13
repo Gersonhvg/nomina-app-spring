@@ -7,6 +7,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -28,5 +29,11 @@ public class BonificacionesController {
 		logger.info(bonificacionModel);
 		
 		return new ModelAndView("bonificaciones", "model", bonificacionModel);
+	}
+	
+	@RequestMapping(value = "/del-bon/{id}")
+	public String deleteBonificacion(@PathVariable int id) {
+		bonificacionService.deleteById(id);
+		return "redirect:/bonificaciones.htm";
 	}
 }
