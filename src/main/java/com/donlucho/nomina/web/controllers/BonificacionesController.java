@@ -19,23 +19,23 @@ import com.donlucho.nomina.business.services.BonificacionService;
 @Controller
 public class BonificacionesController {
 	protected final Log logger = LogFactory.getLog(getClass());
-	
+
 	@Autowired
 	private BonificacionService bonificacionService;
 
 	@RequestMapping(value = "/bonificaciones.htm")
 	public ModelAndView manejadorVistaBonificaciones(HttpServletRequest request, HttpServletResponse res) {
 		String palabraClave = request.getParameter("palabraClave");
-		
+
 		Map<String, Object> bonificacionModel = new HashMap<>();
 		bonificacionModel.put("bonificaciones", this.bonificacionService.listarBonificacion(palabraClave));
-		
+
 		logger.info("Resolviendo la lista de bonificaciones.");
 		logger.info(bonificacionModel);
-		
+
 		return new ModelAndView("bonificaciones", "model", bonificacionModel);
 	}
-	
+
 	@RequestMapping(value = "/del-bon/{id}")
 	public String deleteBonificacion(@PathVariable int id) {
 		bonificacionService.deleteById(id);

@@ -7,7 +7,10 @@ import com.donlucho.nomina.business.entities.Empleado;
 
 public interface EmpleadoService {
 	public List<Empleado> listarEmpleados(String palabraClave);
+
 	public Empleado addEmpleado(Empleado empleado);
+
 	public Optional<Empleado> getEmpleadoId(Integer id);
+
 	public Empleado updateEmpleado(int id, Empleado empleado);
 }

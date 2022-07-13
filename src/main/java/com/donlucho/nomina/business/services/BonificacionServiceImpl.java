@@ -18,7 +18,7 @@ public class BonificacionServiceImpl implements BonificacionService {
 
 	@Override
 	public List<Bonificacion> listarBonificacion(String palabraClave) {
-		if(palabraClave != null) {
+		if (palabraClave != null) {
 			return bonificacionRepository.findAll(palabraClave);
 		}
 		return bonificacionRepository.findAll();

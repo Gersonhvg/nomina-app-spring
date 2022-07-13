@@ -46,20 +46,12 @@
 				
 				<div class="row my-3">
 					<div class="col-md-12">
-<<<<<<< HEAD
 						<form class="row g-3 align-items-center" action="nomina.htm">
-=======
-						<form class="row g-3 align-items-center" action="">
->>>>>>> 53a17596109caf5b1d41db5e0f633e35abc38b28
 							<div class="col-md-auto">
 								<label for="palabraClave" class="col-form-label">Filtrar:</label>
 							</div>
 							<div class="col-md-auto">
-<<<<<<< HEAD
 								<input type="text" class="form-control" id="palabraClave" name="palabraClave" placeholder="Digite el valor a buscar">
-=======
-								<input type="text" class="form-control" id="palabraClave" placeholder="Digite el valor a buscar">
->>>>>>> 53a17596109caf5b1d41db5e0f633e35abc38b28
 							</div>
 							<div class="col-md-auto">
 								<div class="btn-group" role="group">

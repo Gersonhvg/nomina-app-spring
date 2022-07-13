@@ -17,14 +17,14 @@ public class BonificacionCtr {
 	@Autowired
 	@Qualifier("bonificacionservice")
 	private BonificacionService bonificacionService;
-	
+
 	@RequestMapping(value = "/bonedit/{id}")
 	public String mostrarVista(@PathVariable int id, Model model) {
 		model.addAttribute("id", id);
 		model.addAttribute("command", bonificacionService.getBonificacionId(id).orElse(null));
 		return "bonedit";
 	}
-	
+
 	@PostMapping("/bonedit/{id}")
 	public String updateBonificacion(@PathVariable int id, @ModelAttribute("bonificacion") Bonificacion bonificacion) {
 		bonificacionService.updateBonificacion(id, bonificacion);

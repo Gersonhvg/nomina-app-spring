@@ -22,10 +22,10 @@ public class Planilla {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private Integer id;
-	
+
 	@Column(name = "mes")
 	private Integer mes;
-	
+
 	@Column(name = "anio")
 	private Integer anio;
 }

@@ -16,7 +16,7 @@ public class BonificacionController {
 	@Autowired
 	@Qualifier("bonificacionservice")
 	private BonificacionService bonificacionService;
-	
+
 	@PostMapping("/add")
 	public String add(@ModelAttribute(name = "bonificaciones") Bonificacion bonificacion) {
 		bonificacionService.addBonificacion(bonificacion);

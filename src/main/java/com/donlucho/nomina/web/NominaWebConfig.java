@@ -9,11 +9,11 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = {"com.donlucho.nomina.web.controllers"})
+@ComponentScan(basePackages = { "com.donlucho.nomina.web.controllers" })
 public class NominaWebConfig {
 	@Bean
 	public ViewResolver internalViewResolver() {
-		InternalResourceViewResolver internalResourceViewResolver=new InternalResourceViewResolver();
+		InternalResourceViewResolver internalResourceViewResolver = new InternalResourceViewResolver();
 		internalResourceViewResolver.setPrefix("/WEB-INF/views/");
 		internalResourceViewResolver.setSuffix(".jsp");
 		return internalResourceViewResolver;

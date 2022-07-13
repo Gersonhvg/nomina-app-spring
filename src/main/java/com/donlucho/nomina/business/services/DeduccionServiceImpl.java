@@ -18,7 +18,7 @@ public class DeduccionServiceImpl implements DeduccionService {
 
 	@Override
 	public List<Deduccion> listarDeduccion(String palabraClave) {
-		if(palabraClave != null) {
+		if (palabraClave != null) {
 			return deduccionRepository.findAll(palabraClave);
 		}
 		return deduccionRepository.findAll();
@@ -42,10 +42,10 @@ public class DeduccionServiceImpl implements DeduccionService {
 		updateDeduccion.setFecha(deduccion.getFecha());
 		updateDeduccion.setEmpleado(deduccion.getEmpleado());
 		updateDeduccion.setPlanilla(deduccion.getPlanilla());
-		
+
 		return deduccionRepository.save(updateDeduccion);
 	}
-	
+
 	@Override
 	public void deleteById(int id) {
 		deduccionRepository.deleteById(id);

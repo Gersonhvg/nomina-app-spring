@@ -17,7 +17,7 @@ public class DeduccionCtr {
 	@Autowired
 	@Qualifier("deduccionservice")
 	private DeduccionService deduccionService;
-	
+
 	@RequestMapping(value = "/dededit/{id}")
 	public String mostrarVista(@PathVariable int id, Model model) {
 		model.addAttribute("id", id);

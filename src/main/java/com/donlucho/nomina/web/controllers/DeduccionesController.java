@@ -19,23 +19,23 @@ import com.donlucho.nomina.business.services.DeduccionService;
 @Controller
 public class DeduccionesController {
 	protected final Log logger = LogFactory.getLog(getClass());
-	
+
 	@Autowired
 	private DeduccionService deduccionService;
 
 	@RequestMapping(value = "/deducciones.htm")
 	public ModelAndView manejadorVistaDeducciones(HttpServletRequest request, HttpServletResponse res) {
 		String palabraClave = request.getParameter("palabraClave");
-		
+
 		Map<String, Object> deduccionModel = new HashMap<>();
 		deduccionModel.put("deducciones", this.deduccionService.listarDeduccion(palabraClave));
-		
+
 		logger.info("Resolviendo la lista de deducciones.");
 		logger.info(deduccionModel);
-		
+
 		return new ModelAndView("deducciones", "model", deduccionModel);
 	}
-	
+
 	@RequestMapping(value = "/del-ded/{id}")
 	public String deleteDeduccion(@PathVariable int id) {
 		deduccionService.deleteById(id);

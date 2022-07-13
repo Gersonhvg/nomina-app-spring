@@ -18,7 +18,7 @@ public class EmpleadoServiceImpl implements EmpleadoService {
 
 	@Override
 	public List<Empleado> listarEmpleados(String palabraClave) {
-		if(palabraClave != null) {
+		if (palabraClave != null) {
 			return empleadoRepository.findAll(palabraClave);
 		}
 		return empleadoRepository.findAll();
@@ -45,7 +45,7 @@ public class EmpleadoServiceImpl implements EmpleadoService {
 		updateEmpleado.setNacimiento(empleado.getNacimiento());
 		updateEmpleado.setGenero(empleado.getGenero());
 		updateEmpleado.setOcupacion(empleado.getOcupacion());
-		
+
 		return empleadoRepository.save(updateEmpleado);
 	}
 }

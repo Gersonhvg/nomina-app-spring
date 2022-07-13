@@ -90,7 +90,7 @@
 							<div class="row form-group">
 								<label for="nacimiento" class="col-form-label col-md-4">Nacimiento</label>
 								<div class="col-md-8">
-									<input type="date" class="form-control" id="nacimiento" name="nacimiento" value="yyyy-mm-dd" max="2004-06-01" required />
+									<input type="date" class="form-control" id="nacimiento" name="nacimiento" value="yyyy-mm-dd" max="2004-07-31" required />
 								</div>
 							</div>
 							<!--Género-->

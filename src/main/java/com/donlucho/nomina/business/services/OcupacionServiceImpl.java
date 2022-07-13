@@ -14,7 +14,7 @@ public class OcupacionServiceImpl implements OcupacionService {
 	@Autowired
 	@Qualifier("ocupacionrepository")
 	private OcupacionJpaRepository ocupacionRepository;
-	
+
 	@Override
 	public List<Ocupacion> listarOcupacion() {
 		return ocupacionRepository.findAll();

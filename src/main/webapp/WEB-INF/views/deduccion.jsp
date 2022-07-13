@@ -78,7 +78,7 @@
 								<div class="col-md-8">
 									<select class="form-select" id="empleado.id" name="empleado.id" required>
 										<option disabled selected>Seleccione...</option>
-										<c:forEach items="${ empleados }" var="emp">
+										<c:forEach items="${ empleadosd }" var="emp">
 											<option value="${ emp.id }">${ emp.nombre } ${ emp.apellido }</option>
 										</c:forEach>
 									</select>

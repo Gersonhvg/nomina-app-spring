@@ -26,20 +26,20 @@ public class Deduccion {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private Integer id;
-	
+
 	@Column(name = "motivo")
 	private String motivo;
-	
+
 	@Column(name = "monto")
 	private Double monto;
-	
+
 	@Column(name = "fecha")
 	private Date fecha;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "empleadoId")
 	private Empleado empleado;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "planillaId")
 	private Planilla planilla;
