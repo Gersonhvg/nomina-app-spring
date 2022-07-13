@@ -29,14 +29,13 @@ import com.donlucho.nomina.business.entities.Usuario;
 @PropertySource("classpath:application.properties")
 @EnableJpaRepositories(basePackages = "com.donlucho.nomina.business.repositories")
 @ComponentScan(basePackages = "com.donlucho.nomina.business.services")
-
 public class NominaBusinessConfig {
 	@Autowired
 	Environment env;
 	
 	@Bean
 	public DataSource dataSource() {
-		DriverManagerDataSource ds=new DriverManagerDataSource();
+		DriverManagerDataSource ds = new DriverManagerDataSource();
 		ds.setDriverClassName(env.getProperty("db.driver"));
 		ds.setUrl(env.getProperty("db.url"));
 		ds.setUsername(env.getProperty("db.username"));

@@ -2,7 +2,7 @@
 <%@ include file="/WEB-INF/views/incluido.jsp" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <!-- HEAD -->
 <head>
 	<meta charset="UTF-8" />
@@ -84,8 +84,7 @@
 								<label for="planilla.id" class="col-form-label col-md-4">Planilla</label>
 								<div class="col-md-8">
 									<select class="form-select" id="planilla.id" name="planilla.id" value="${ ded.planilla.id }" required>
-										<option value="1" selected>JUNIO - 2022</option>
-<!-- 										<option value="2">JULIO - 2022</option> -->
+										<option value="1" selected>JULIO - 2022</option>
 									</select>
 								</div>
 							</div>

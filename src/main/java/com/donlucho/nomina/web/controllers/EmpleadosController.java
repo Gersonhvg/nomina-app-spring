@@ -18,12 +18,11 @@ public class EmpleadosController {
 	
 	@Autowired
 	private EmpleadoService empleadoService;
-	
-	//Empleados
+
 	@RequestMapping(value = "/empleados.htm")
 	public ModelAndView manejadorVistaEmpleados() {
 		Map<String, Object> empleadoModel = new HashMap<String, Object>();
-		empleadoModel.put("empleados", this.empleadoService.ListarEmpleados());
+		empleadoModel.put("empleados", this.empleadoService.listarEmpleados());
 		
 		logger.info("Resolviendo la lista de empleados.");
 		logger.info(empleadoModel);

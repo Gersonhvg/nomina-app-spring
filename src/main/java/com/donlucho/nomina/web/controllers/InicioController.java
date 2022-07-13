@@ -9,7 +9,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class InicioController {
-	//Inicio
 	@RequestMapping("/inicio.htm")
 	public ModelAndView manejadorVistaInicio(HttpServletRequest request, HttpServletResponse res) {
 		String email = request.getParameter("email");

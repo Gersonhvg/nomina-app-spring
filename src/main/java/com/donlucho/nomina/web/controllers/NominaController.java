@@ -19,11 +19,10 @@ public class NominaController {
 	@Autowired
 	private EmpleadoService empleadoService;
 	
-	//Nómina
 	@RequestMapping(value = "/nomina.htm")
 	public ModelAndView manejadorVistaNomina() {
 		Map<String, Object> empleadoModel = new HashMap<String, Object>();
-		empleadoModel.put("empleados", this.empleadoService.ListarEmpleados());
+		empleadoModel.put("empleados", this.empleadoService.listarEmpleados());
 		
 		logger.info("Resolviendo la lista de empleados.");
 		logger.info(empleadoModel);

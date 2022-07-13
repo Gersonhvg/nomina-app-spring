@@ -2,7 +2,7 @@
 <%@ include file="/WEB-INF/views/incluido.jsp" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <!-- HEAD -->
 <head>
 	<meta charset="UTF-8">

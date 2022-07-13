@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +19,6 @@ public class BonificacionCtr {
 	@Autowired
 	@Qualifier("bonificacionservice")
 	private BonificacionService bonificacionService;
-
 
 	@RequestMapping(method = RequestMethod.GET, value = "/bonificacion.htm")
 	public ModelAndView manejadorVistaBonificacion() {

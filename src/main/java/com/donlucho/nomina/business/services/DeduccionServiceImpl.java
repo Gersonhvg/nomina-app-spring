@@ -17,7 +17,7 @@ public class DeduccionServiceImpl implements DeduccionService {
 	private DeduccionJpaRepository deduccionRepository;
 
 	@Override
-	public List<Deduccion> ListarDeduccion() {
+	public List<Deduccion> listarDeduccion() {
 		return deduccionRepository.findAll();
 	}
 

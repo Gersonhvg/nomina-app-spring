@@ -18,12 +18,11 @@ public class DeduccionesController {
 	
 	@Autowired
 	private DeduccionService deduccionService;
-	
-	//Deducciones
+
 	@RequestMapping(value = "/deducciones.htm")
 	public ModelAndView manejadorVistaDeducciones() {
 		Map<String, Object> deduccionModel = new HashMap<String, Object>();
-		deduccionModel.put("deducciones", this.deduccionService.ListarDeduccion());
+		deduccionModel.put("deducciones", this.deduccionService.listarDeduccion());
 		
 		logger.info("Resolviendo la lista de deducciones.");
 		logger.info(deduccionModel);

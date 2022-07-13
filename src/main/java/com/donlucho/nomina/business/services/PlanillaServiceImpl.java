@@ -17,13 +17,11 @@ public class PlanillaServiceImpl implements PlanillaService {
 	
 	@Override
 	public List<Planilla> listarPlanilla() {
-		// TODO Auto-generated method stub
 		return planillaRepository.findAll();
 	}
 
 	@Override
 	public Planilla addPlanilla(Planilla planilla) {
-		// TODO Auto-generated method stub
 		return planillaRepository.save(planilla);
 	}
 }

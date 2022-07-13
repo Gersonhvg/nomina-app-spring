@@ -18,12 +18,11 @@ public class BonificacionesController {
 	
 	@Autowired
 	private BonificacionService bonificacionService;
-	
-	//Bonificaciones
+
 	@RequestMapping(value = "/bonificaciones.htm")
 	public ModelAndView manejadorVistaBonificaciones() {
 		Map<String, Object> bonificacionModel = new HashMap<String, Object>();
-		bonificacionModel.put("bonificaciones", this.bonificacionService.ListarBonificacion());
+		bonificacionModel.put("bonificaciones", this.bonificacionService.listarBonificacion());
 		
 		logger.info("Resolviendo la lista de bonificaciones.");
 		logger.info(bonificacionModel);

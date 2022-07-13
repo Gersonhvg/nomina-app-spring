@@ -2,7 +2,7 @@
 <%@ include file="/WEB-INF/views/incluido.jsp" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <!-- HEAD -->
 <head>
 	<meta charset="UTF-8">
@@ -44,8 +44,29 @@
 		<div class="row justify-content-center">
 			<div class="col-md-12">
 				<h1 class="text-center">BONIFICACIONES</h1>
-				<a class="btn btn-danger" href="bonificacion.htm" role="button">Nuevo</a><br /><br />
+				<div class="row my-3">
+					<div class="col-md-6">
+						<a class="btn btn-danger" href="bonificacion.htm" role="button">Nuevo</a>
+					</div>
+					<div class="col-md-6">
+						<form class="row g-3 align-items-center" action="">
+							<div class="col-md-auto">
+								<label for="palabraClave" class="col-form-label">Filtrar:</label>
+							</div>
+							<div class="col-md-auto">
+								<input type="text" class="form-control" id="palabraClave" placeholder="Digite el valor a buscar">
+							</div>
+							<div class="col-md-auto">
+								<div class="btn-group" role="group">
+									<input type="submit" class="btn btn-info" value="Buscar"/>
+            						<input type="submit" class="btn btn-warning" value="Limpiar"/>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
 				<table class="table table-striped table-hover table-bordered text-center">
+					<caption class="text-white">Bonificaciones</caption>
 					<thead>
 						<tr>
 							<th scope="col">ID</th>
@@ -64,7 +85,10 @@
 								<td><c:out value="${ bon.monto }" /></td>
 								<td><c:out value="${ bon.fecha }" /></td>
 								<td><c:out value="${ bon.empleado.id }" /></td>
-								<td><a href="bonedit/${ bon.id }" ><i class="bi bi-pencil-square"></i></a></td>
+								<td>
+									<a href="bonedit/${ bon.id }" ><span class="bi bi-pencil-square"></span></a> &nbsp;
+									<a href="#"><span class="bi bi-trash3"></span></a>
+								</td>
 							</tr>
 						</c:forEach>
 					</tbody>

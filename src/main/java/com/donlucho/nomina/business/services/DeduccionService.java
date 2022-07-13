@@ -6,7 +6,7 @@ import java.util.Optional;
 import com.donlucho.nomina.business.entities.Deduccion;
 
 public interface DeduccionService {
-	public List<Deduccion> ListarDeduccion();
+	public List<Deduccion> listarDeduccion();
 	public Deduccion addDeduccion(Deduccion deduccion);
 	public Optional<Deduccion> getDeduccionId(Integer id);
 	public Deduccion updateDeduccion(int id, Deduccion deduccion);

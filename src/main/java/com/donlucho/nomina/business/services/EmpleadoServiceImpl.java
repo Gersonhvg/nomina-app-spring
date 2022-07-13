@@ -17,7 +17,7 @@ public class EmpleadoServiceImpl implements EmpleadoService {
 	private EmpleadoJpaRepository empleadoRepository;
 
 	@Override
-	public List<Empleado> ListarEmpleados() {
+	public List<Empleado> listarEmpleados() {
 		return empleadoRepository.findAll();
 	}
 

@@ -7,7 +7,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class LoginController {
-	//Login
 	@RequestMapping(method = RequestMethod.GET, value = "/login.htm")
 	public ModelAndView manejadorVistaLogin() {
 		return new ModelAndView("login");
