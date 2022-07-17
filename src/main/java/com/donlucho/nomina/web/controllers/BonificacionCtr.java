@@ -35,7 +35,7 @@ public class BonificacionCtr {
 		
 		bonificacion1.setId(bonificacion.getId());
 		
-				
+		
 		bonificacionService.updateBonificacion(id, bonificacion1);
 		
 		return "redirect:/bonificaciones.htm";
