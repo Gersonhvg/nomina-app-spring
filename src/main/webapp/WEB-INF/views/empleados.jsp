@@ -49,12 +49,12 @@
 						<a class="btn btn-danger" href="empleado.htm" role="button">Nuevo</a>
 					</div>
 					<div class="col-md-6">
-						<form class="row g-3 align-items-center" action="">
+						<form class="row g-3 align-items-center" action="empleados.htm">
 							<div class="col-md-auto">
 								<label for="palabraClave" class="col-form-label">Filtrar:</label>
 							</div>
 							<div class="col-md-auto">
-								<input type="text" class="form-control" id="palabraClave" placeholder="Digite el valor a buscar">
+								<input type="text" class="form-control" id="palabraClave" name="palabraClave" placeholder="Digite el valor a buscar">
 							</div>
 							<div class="col-md-auto">
 								<div class="btn-group" role="group">

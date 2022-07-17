@@ -24,7 +24,7 @@ public class EmpleadoCtr {
 	public ModelAndView manejadorVistaEmpleado() {
 		return new ModelAndView("empleado");
 	}
-	
+
 	@RequestMapping(value = "/empedit/{id}")
 	public String mostrarVista(@PathVariable int id, Model model) {
 		model.addAttribute("id", id);

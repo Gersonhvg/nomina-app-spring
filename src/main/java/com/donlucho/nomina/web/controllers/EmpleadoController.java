@@ -16,7 +16,7 @@ public class EmpleadoController {
 	@Autowired
 	@Qualifier("empleadoservice")
 	private EmpleadoService empleadoService;
-	
+
 	@PostMapping("/add")
 	public String addEmpleado(@ModelAttribute(name = "empleados") Empleado empleado) {
 		empleadoService.addEmpleado(empleado);

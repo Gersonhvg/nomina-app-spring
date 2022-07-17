@@ -14,7 +14,7 @@ public class PlanillaServiceImpl implements PlanillaService {
 	@Autowired
 	@Qualifier("planillarepository")
 	private PlanillaJpaRepository planillaRepository;
-	
+
 	@Override
 	public List<Planilla> listarPlanilla() {
 		return planillaRepository.findAll();

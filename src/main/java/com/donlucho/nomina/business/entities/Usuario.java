@@ -22,25 +22,25 @@ public class Usuario {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private String id;
-	
+
 	@Column(name = "dni")
 	private String dni;
-	
+
 	@Column(name = "nombre")
 	private String nombre;
-	
+
 	@Column(name = "apellido")
 	private String apellido;
-	
+
 	@Column(name = "correo")
 	private String correo;
-	
+
 	@Column(name = "password")
 	private String password;
-	
+
 	@Column(name = "rol")
 	private String rol;
-	
+
 	@Column(name = "estado")
 	private Integer estado;
 }

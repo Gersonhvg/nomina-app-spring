@@ -13,8 +13,8 @@ public class InicioController {
 	public ModelAndView manejadorVistaInicio(HttpServletRequest request, HttpServletResponse res) {
 		String email = request.getParameter("email");
 		String contrasenia = request.getParameter("contrasenia");
-		
-		if(contrasenia.equals("123456") && (email.equals("contador@donlucho.pe"))) {
+
+		if (contrasenia.equals("123456") && (email.equals("contador@donlucho.pe"))) {
 			return new ModelAndView("inicio");
 		} else {
 			return new ModelAndView("login", "msg", "ERROR: Correo o contraseña incorrectos");

@@ -16,7 +16,7 @@ public class DeduccionController {
 	@Autowired
 	@Qualifier("deduccionservice")
 	private DeduccionService deduccionService;
-	
+
 	@PostMapping("/add")
 	public String add(@ModelAttribute(name = "deducciones") Deduccion deduccion) {
 		deduccionService.addDeduccion(deduccion);

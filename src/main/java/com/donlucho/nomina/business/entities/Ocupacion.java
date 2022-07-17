@@ -22,10 +22,10 @@ public class Ocupacion {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private Integer id;
-	
+
 	@Column(name = "ocupacion")
 	private String ocupacions;
-	
+
 	@Column(name = "sueldo")
 	private Double sueldo;
 }
