@@ -8,7 +8,7 @@ import com.donlucho.nomina.business.entities.Planilla;
 import lombok.Data;
 
 @Data
-public class BonificacionDTO {
+public class DeduccionDTO {
 	private Integer id;
 	private String motivo;
 	private Double monto;

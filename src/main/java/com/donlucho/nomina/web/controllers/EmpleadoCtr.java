@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.donlucho.nomina.business.dto.EmpleadoDTO;
 import com.donlucho.nomina.business.entities.Empleado;
 import com.donlucho.nomina.business.services.EmpleadoService;
 
@@ -33,7 +34,19 @@ public class EmpleadoCtr {
 	}
 
 	@PostMapping("/empedit/{id}")
-	public String updateEmpleado(@PathVariable int id, @ModelAttribute("empleado") Empleado empleado) {
+	public String updateEmpleado(@PathVariable int id, @ModelAttribute("empleado") EmpleadoDTO empleadoDTO) {
+		Empleado empleado = new Empleado();
+
+		empleado.setId(empleadoDTO.getId());
+		empleado.setDni(empleadoDTO.getDni());
+		empleado.setNombre(empleadoDTO.getNombre());
+		empleado.setApellido(empleadoDTO.getApellido());
+		empleado.setCorreo(empleadoDTO.getCorreo());
+		empleado.setDireccion(empleadoDTO.getDireccion());
+		empleado.setNacimiento(empleadoDTO.getNacimiento());
+		empleado.setGenero(empleadoDTO.getGenero());
+		empleado.setOcupacion(empleadoDTO.getOcupacion());
+
 		empleadoService.updateEmpleado(id, empleado);
 		return "redirect:/empleados.htm";
 	}

@@ -27,17 +27,17 @@ public class BonificacionCtr {
 	}
 
 	@PostMapping("/bonedit/{id}")
-	public String updateBonificacion(@PathVariable int id, @ModelAttribute("bonificacion") BonificacionDTO bonificacion) {
-		
-		Bonificacion bonificacion1=new Bonificacion();
-		
-		//Mapper BonificacionDTO hacia Bonificacion
-		
-		bonificacion1.setId(bonificacion.getId());
-		
-		
-		bonificacionService.updateBonificacion(id, bonificacion1);
-		
+	public String updateBonificacion(@PathVariable int id, @ModelAttribute("bonificacion") BonificacionDTO bonificacionDTO) {
+		Bonificacion bonificacion = new Bonificacion();
+
+		bonificacion.setId(bonificacionDTO.getId());
+		bonificacion.setMotivo(bonificacionDTO.getMotivo());
+		bonificacion.setMonto(bonificacionDTO.getMonto());
+		bonificacion.setFecha(bonificacionDTO.getFecha());
+		bonificacion.setEmpleado(bonificacionDTO.getEmpleado());
+		bonificacion.setPlanilla(bonificacionDTO.getPlanilla());
+
+		bonificacionService.updateBonificacion(id, bonificacion);
 		return "redirect:/bonificaciones.htm";
 	}
 }

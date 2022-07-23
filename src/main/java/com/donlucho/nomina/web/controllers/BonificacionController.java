@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.donlucho.nomina.business.dto.BonificacionDTO;
 import com.donlucho.nomina.business.entities.Bonificacion;
 import com.donlucho.nomina.business.services.BonificacionService;
 
@@ -18,7 +19,16 @@ public class BonificacionController {
 	private BonificacionService bonificacionService;
 
 	@PostMapping("/add")
-	public String add(@ModelAttribute(name = "bonificaciones") Bonificacion bonificacion) {
+	public String add(@ModelAttribute(name = "bonificaciones") BonificacionDTO bonificacionDTO) {
+		Bonificacion bonificacion = new Bonificacion();
+
+		bonificacion.setId(bonificacionDTO.getId());
+		bonificacion.setMotivo(bonificacionDTO.getMotivo());
+		bonificacion.setMonto(bonificacionDTO.getMonto());
+		bonificacion.setFecha(bonificacionDTO.getFecha());
+		bonificacion.setEmpleado(bonificacionDTO.getEmpleado());
+		bonificacion.setPlanilla(bonificacionDTO.getPlanilla());
+
 		bonificacionService.addBonificacion(bonificacion);
 		return "redirect:/bonificaciones.htm";
 	}
